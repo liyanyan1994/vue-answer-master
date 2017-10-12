@@ -30,15 +30,12 @@ export default {
         height: 2.26rem;
         top: 2.7rem;
         left: .8rem;
-        margin-bottom: .38rem;
-        // border: 1px solid red;
         &.home-logo{
             background-image: url(../../assets/images/01_06.png);
             background-position: right center;
         }
     }
     .item-container{
-        // border: 1px solid blue;
         position: relative;
         width: 100%;
         height: 2.74rem;
@@ -47,18 +44,17 @@ export default {
             position: absolute;
             width: 2.74rem;
             height: 1.02rem;
-            top: 0.86rem;
+            top: 1.4rem;
             left: .28rem;
-            // border: 1px solid red;
+            z-index: 10;
             background-image: url(../../assets/images/01_10.png);
             background-position: right center;
         }
         .item-center{
-             width: 4.60rem;
-             height: 2.74rem;
-             margin: 0 auto;
-             z-index: 10;
-            //  border: 1px solid red;
+            position: absolute;
+            width: 4.60rem;
+            height: 4.4rem;
+            left:1.6rem;
             background-image: url(../../assets/images/01_03.png);
             background-position: right center;
         }
@@ -86,7 +82,6 @@ export default {
         line-height: .46rem;
         position: absolute;
         bottom: .48rem;
-        // border: 1px solid red;
         left: 2.4rem;
         text-align: center;
         background-image: url(../../assets/images/01_18.png);

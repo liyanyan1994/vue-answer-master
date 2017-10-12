@@ -10,7 +10,7 @@ const state = {
     itemNum: 1, // 第几题
     timer: '', // 定时器
     itemDetail: [{
-        "question_name": "如何修改客户意向？",
+        "question_name": "如何修改客户意向,你觉得这是一个正确的答案吗？",
         "question_id": 50,
         "question_answer": [
             { "question_answer_id": 1, "question_id": 50, "question_answer_name": "躺着改，坐着改，站着改，怎么舒服怎么改", "is_standard_answer": 0 },

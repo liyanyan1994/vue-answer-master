@@ -13,7 +13,7 @@ export default {
   data () {
       return {
           rightAnswer: [2,7],
-          scoreTips: ['你是假的吧','全部都给老师了？','猴子派来的，这么聪明！'],
+          scoreTips: ['你是假的吧','都还给老师了？','你真棒！'],
           activeIndex: '',
           score: 0,
           scoreTip:''
@@ -28,7 +28,7 @@ export default {
       countScore(){
           this.answerId.forEach((item,index) => {
               if(item === this.rightAnswer[index]){
-                  this.score += 20;
+                  this.score += 80;
               }
           }, this);
       },
@@ -61,6 +61,7 @@ export default {
     right: 0;
     width: 6rem;
     height: 9rem;
+    font-size: 1.4rem;
     // border: 1px solid red;
     .score-container{
         position: relative;
@@ -73,7 +74,7 @@ export default {
             background-image: url('../../assets/images/genery.png');
             .your-scores{
                 position: absolute;
-                top: 3.3rem;
+                top: 2.8rem;
                 right: 0.95rem;
                 // border: 1px solid red;
                 width: 3.8rem;
@@ -82,13 +83,13 @@ export default {
             };
             .scores-tips{
                 position: absolute;
-                top: 5.3rem;
+                top: 5.6rem;
                 right: .9rem;
                 // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.21rem;
                 color: red;
-                font-size: .36rem;
+                font-size: .46rem;
             }
         }
         &.good{
@@ -96,7 +97,7 @@ export default {
             .your-scores{
                 position: absolute;
                 top: 1.47rem;
-                right: 0.55rem;
+                right: 0.95rem;
                 // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.77rem;
@@ -104,13 +105,13 @@ export default {
             };
             .scores-tips{
                 position: absolute;
-                top: 3.86rem;
+                top: 4.46rem;
                 right: .9rem;
                 // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.21rem;
                 color: red;
-                font-size: .36rem;
+                font-size: .46rem;
             }
         }
         &.nice{
@@ -118,7 +119,7 @@ export default {
             .your-scores{
                 position: absolute;
                 top: 1.47rem;
-                right: 0.55rem;
+                right: 0.95rem;
                 // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.77rem;
@@ -126,13 +127,13 @@ export default {
             };
             .scores-tips{
                 position: absolute;
-                top: 3.86rem;
+                top: 4.06rem;
                 right: .4rem;
                 // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.21rem;
                 color: red;
-                font-size: .36rem;
+                font-size: .46rem;
             }
         }
         // .your-scores{

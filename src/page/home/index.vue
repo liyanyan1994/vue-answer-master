@@ -28,7 +28,7 @@ export default {
         position: absolute;
         width: 80%;
         height: 2.26rem;
-        top: 2.7rem;
+        top: 2.4rem;
         left: .8rem;
         &.home-logo{
             background-image: url(../../assets/images/01_06.png);
@@ -39,7 +39,7 @@ export default {
         position: relative;
         width: 100%;
         height: 2.74rem;
-        top: 5.82rem;
+        top: 5.52rem;
         .item-left{
             position: absolute;
             width: 2.74rem;

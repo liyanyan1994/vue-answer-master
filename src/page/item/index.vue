@@ -1,12 +1,11 @@
 <template>
     <div class="item">
-        <div class="item-title-container">
-            <div class="item-title">{{itemNum}}.{{itemDetail[itemNum-1].question_name}}</div>
-        </div>
+        <div class="item-title-container">{{itemNum}}.{{itemDetail[itemNum-1].question_name}}</div>
         <div class="item-list-container">
             <ul>
-                <li class="item-list" v-for="(item,index) in itemDetail[itemNum-1].question_answer" :key="index" @click="choosed(index,item.question_answer_id)">
-                    <p class="item-list-content" :class="{'has_choosed':choosedIndex==index}">{{transType(index)}}.{{item.question_answer_name}}</p>
+                <li class="item-list" v-for="(item,index) in itemDetail[itemNum-1].question_answer"  :class="{'has_choosed':choosedIndex==index}" :key="index" @click="choosed(index,item.question_answer_id)">
+                    <!-- <p class="item-list-content" :class="{'has_choosed':choosedIndex==index}">{{transType(index)}}.{{item.question_answer_name}}</p> -->
+                  {{transType(index)}}.{{item.question_answer_name}}
                 </li>
             </ul>
         </div>
@@ -76,40 +75,35 @@ export default {
 
 <style lang="less" scoped>
 .item{
-    font-size:.2rem;
+    font-size:.3rem;
     .item-title-container{
         position: absolute;
         width: 5.6rem;
-        height: 1.2rem;
+        min-height: 1.2rem;
         left: 50%;
-        top: 2.4rem;
+        top: 2rem;
+        text-indent:.3rem; 
+        padding: .3rem .2rem .6rem;
         margin-left: -2.8rem;
         // border: 1px solid red;
         background-image: url('../../assets/images/item_title.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        .item-title{
-            // font-size: .3rem;
-            height: 1.2rem;
-            padding-top: .3rem;
-            color: #000;
-            text-indent:.3rem; 
-        }
+        color: #000;
     }
     .item-list-container{
         position: absolute;
-        top: 3.8rem;
-        width: 5rem;
+        top: 4.4rem;
         left: 50%;
+        width: 5rem;
         margin-left: -2.5rem;
-        // border: 1px solid rebeccapurple;
         .item-list{
-            display: table;
             margin-bottom: .45rem;
             text-indent: .3rem;
             width: 100%;
+            padding: .3rem .1rem;
             min-height: 1rem;
-            // font-size: .3rem;
+            color: #000;
             background-repeat: no-repeat;
             background-size: 100% 100%;
             &:nth-child(1){
@@ -124,22 +118,17 @@ export default {
             &:nth-child(4){
                 background-image: url('../../assets/images/item_01.png');
             }
-            .item-list-content{
-                display: table-cell;
-                vertical-align: middle;
-                color: #000;
-                &.has_choosed{
-                    color: #fff;
-                }
+            &.has_choosed{
+                color: #fff;
             }
         }
     }
     .item-btn{
         position: absolute;
-        bottom: .8rem;
         width: 1.8rem;
         height: .9rem;
         left: 50%;
+        bottom: .4rem;
         margin-left: -.9rem;
         background-repeat: no-repeat;
         background-size: 100% 100%;

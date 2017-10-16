@@ -12,38 +12,39 @@ export default {
   name: 'score',
   data () {
       return {
-          rightAnswer: [2,7],
-          scoreTips: ['你是假的吧','都还给老师了？','你真棒！'],
+          rightAnswer: [6,11,14,19,1],
+          scoreTips: ['你是假的吧','表现一般般！','你真棒！'],
           activeIndex: '',
           score: 0,
           scoreTip:''
       }
   },
-  computed:mapState(['answerId']),
+  computed: mapState(['answerId']),
   created(){
       this.countScore();
       this.getScoreTip();
+      console.log('timer='+this.timer)
   },
   methods: {
       countScore(){
           this.answerId.forEach((item,index) => {
               if(item === this.rightAnswer[index]){
-                  this.score += 80;
+                  this.score += 20;
               }
           }, this);
       },
       getScoreTip() {
-          if(this.score <=20){
+          if(this.score <=60){
             this.scoreTip = this.scoreTips[0];
             this.activeIndex = 'genery';
             return ;
           }
-           if(this.score <=60){
+           if(this.score <=80){
             this.scoreTip = this.scoreTips[1];
             this.activeIndex = 'good';
             return ;
           }
-           if(this.score <=80){
+           if(this.score <=100){
             this.scoreTip = this.scoreTips[2];
             this.activeIndex = 'nice';
             return ;
@@ -55,19 +56,17 @@ export default {
 
 <style lang="less" scoped>
 .score{
-    color: #000;
     position: absolute;
     bottom: 0;
     right: 0;
     width: 6rem;
     height: 9rem;
+    color: #000;
     font-size: 1.4rem;
-    // border: 1px solid red;
     .score-container{
         position: relative;
         width: 100%;
         height: 100%;
-        // border: 1px solid blue;
         background-size:100% 100%;
         background-repeat: no-repeat;
         &.genery{
@@ -76,19 +75,17 @@ export default {
                 position: absolute;
                 top: 2.8rem;
                 right: 0.95rem;
-                // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.77rem;
-                color: red;
+                color: #e44f4f;
             };
             .scores-tips{
                 position: absolute;
                 top: 5.6rem;
                 right: .9rem;
-                // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.21rem;
-                color: red;
+                color: rgb(216,60,71);
                 font-size: .46rem;
             }
         }
@@ -98,19 +95,17 @@ export default {
                 position: absolute;
                 top: 1.47rem;
                 right: 0.95rem;
-                // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.77rem;
-                color: red;
+                color: #e44f4f;
             };
             .scores-tips{
                 position: absolute;
-                top: 4.46rem;
+                top: 4.06rem;
                 right: .9rem;
-                // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.21rem;
-                color: red;
+                color: rgb(216,60,71);
                 font-size: .46rem;
             }
         }
@@ -120,43 +115,21 @@ export default {
                 position: absolute;
                 top: 1.47rem;
                 right: 0.95rem;
-                // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.77rem;
-                color: red;
+                color: #e44f4f;
             };
             .scores-tips{
                 position: absolute;
                 top: 4.06rem;
                 right: .4rem;
-                // border: 1px solid red;
                 width: 3.8rem;
                 height: 1.21rem;
-                color: red;
+                color: rgb(216,60,71);
                 font-size: .46rem;
             }
         }
-        // .your-scores{
-        //     position: absolute;
-        //     top: 1.47rem;
-        //     right: 0.55rem;
-        //     // border: 1px solid red;
-        //     width: 3.8rem;
-        //     height: 1.77rem;
-        //     color: red;
-        // };
-        // .scores-tips{
-        //     position: absolute;
-        //     top: 3.86rem;
-        //     right: .9rem;
-        //     // border: 1px solid red;
-        //     width: 3.8rem;
-        //     height: 1.21rem;
-        //     color: red;
-        //     font-size: .36rem;
-        // }
     }
-   
 }
 </style>
 

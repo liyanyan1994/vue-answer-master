@@ -4,7 +4,6 @@
         <div class="item-list-container">
             <ul>
                 <li class="item-list" v-for="(item,index) in itemDetail[itemNum-1].question_answer"  :class="{'has_choosed':choosedIndex==index}" :key="index" @click="choosed(index,item.question_answer_id)">
-                    <!-- <p class="item-list-content" :class="{'has_choosed':choosedIndex==index}">{{transType(index)}}.{{item.question_answer_name}}</p> -->
                   {{transType(index)}}.{{item.question_answer_name}}
                 </li>
             </ul>
@@ -63,7 +62,7 @@ export default {
           if(this.choosedIndex !== null) {
               this.choosedIndex = null;
               this.addNum(this.choosedId);
-              clearInterval(this.timer);
+            //   clearInterval(this.timer);
               this.$router.push('score')
           } else{
               this.toastMsg("你还没有选中答案")
@@ -78,18 +77,17 @@ export default {
     font-size:.3rem;
     .item-title-container{
         position: absolute;
+        top: 2rem;
+        left: 50%;
+        margin-left: -2.8rem;
+        padding: .3rem .2rem .6rem;
         width: 5.6rem;
         min-height: 1.2rem;
-        left: 50%;
-        top: 2rem;
         text-indent:.3rem; 
-        padding: .3rem .2rem .6rem;
-        margin-left: -2.8rem;
-        // border: 1px solid red;
+        color: #000;
         background-image: url('../../assets/images/item_title.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        color: #000;
     }
     .item-list-container{
         position: absolute;
@@ -98,11 +96,11 @@ export default {
         width: 5rem;
         margin-left: -2.5rem;
         .item-list{
+            width: 100%;
+            min-height: 1rem;
+            padding: .3rem .1rem;
             margin-bottom: .45rem;
             text-indent: .3rem;
-            width: 100%;
-            padding: .3rem .1rem;
-            min-height: 1rem;
             color: #000;
             background-repeat: no-repeat;
             background-size: 100% 100%;
@@ -125,11 +123,11 @@ export default {
     }
     .item-btn{
         position: absolute;
-        width: 1.8rem;
-        height: .9rem;
         left: 50%;
         bottom: .4rem;
         margin-left: -.9rem;
+        width: 1.8rem;
+        height: .9rem;
         background-repeat: no-repeat;
         background-size: 100% 100%;
         &.next{
